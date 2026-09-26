@@ -1,0 +1,3 @@
+# Emergency Funds Come Before Investing
+
+An emergency fund is 3-6 months of essential expenses in a safe, liquid account (high-yield savings), not invested in the market. Its job is to prevent forced selling of investments — or high-interest debt — when job loss, medical bills, or car repairs hit. Freelancers and single-income households should lean toward 6+ months. Build it before aggressive investing: earning 8% in the market means little if a $3,000 emergency forces you onto a 24% APR credit card. Once funded, redirect that monthly amount to investing. Keep it boring and separate from spending money so it is there when you need it.

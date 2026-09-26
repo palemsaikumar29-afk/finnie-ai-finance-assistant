@@ -1,0 +1,3 @@
+# Debt Payoff: Avalanche vs Snowball
+
+Two proven strategies for killing debt: the avalanche (pay minimums everywhere, throw extra cash at the highest interest rate first) and the snowball (attack the smallest balance first for quick wins). The avalanche saves more money mathematically; the snowball wins behaviorally for people who need momentum. Both beat minimum-only payments, where a $5,000 balance at 24% APR takes 7+ years and costs ~$4,000 in interest. General priority: kill high-interest debt before investing beyond the 401(k) match - a guaranteed 24% 'return' from payoff beats any market bet.

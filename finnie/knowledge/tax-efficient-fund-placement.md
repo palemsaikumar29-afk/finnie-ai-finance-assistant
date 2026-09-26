@@ -1,0 +1,3 @@
+# Tax-Efficient Fund Placement (Educational Overview)
+
+Asset location means putting each investment in the account type where it's taxed least. General rules: hold tax-inefficient assets (bonds, REITs, high-turnover funds) in tax-deferred accounts (401(k), traditional IRA); hold tax-efficient assets (broad-market index ETFs with qualified dividends) in taxable brokerage accounts; reserve Roth accounts for the highest-growth assets since withdrawals are tax-free. Municipal bonds suit taxable accounts for high earners. Placement is second-order to saving enough, but it can add meaningful after-tax return over decades. Educational content only.

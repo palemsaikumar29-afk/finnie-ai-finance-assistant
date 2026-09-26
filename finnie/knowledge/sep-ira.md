@@ -1,0 +1,3 @@
+# SEP IRA and Solo 401(k) for the Self-Employed
+
+Self-employed workers lack employer plans but have powerful options. A SEP IRA allows contributions up to 25% of compensation (capped annually), easy to set up. A Solo 401(k) permits both employee deferrals ($24,500 in 2026) plus employer profit-sharing, often allowing larger total contributions than a SEP at the same income, plus Roth options and loan provisions. Both grow tax-deferred. The self-employed also pay both halves of Social Security/Medicare tax, making retirement contributions doubly valuable as deductions. Deadlines and calculations are fiddly - verify with a tax professional. Educational content only.

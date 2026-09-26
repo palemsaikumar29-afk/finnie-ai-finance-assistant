@@ -1,0 +1,3 @@
+# Bonds Basics
+
+A bond is a loan you make to a government or corporation: you lend principal, they pay periodic interest (coupons), and return principal at maturity. Bonds are generally less volatile than stocks and serve as portfolio ballast. Key risks: interest-rate risk (when rates rise, existing bond prices fall), credit risk (the issuer may default), and inflation risk (fixed payments lose purchasing power). Bond prices and yields move inversely - a fundamental relationship every investor should internalize. Most individuals own bonds through total-bond-market funds rather than individual issues.

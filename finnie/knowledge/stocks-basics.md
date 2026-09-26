@@ -1,0 +1,3 @@
+# Stocks Basics
+
+A stock is a slice of ownership in a company. Shareholders profit two ways: price appreciation and dividends. Stock prices reflect the market's collective expectation of future earnings, so they move on earnings reports, economic data, interest rates, and sentiment. Common stock typically carries voting rights; preferred stock has priority on dividends but usually no vote. Individual stocks carry company-specific risk — a single scandal or disruption can halve a price — which is why most investors own stocks through diversified funds. Expected long-term returns for broad equities are around 7-10% nominal annually, with gut-wrenching drawdowns along the way.

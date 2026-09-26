@@ -1,0 +1,3 @@
+# Compound Interest: The Eighth Wonder
+
+Compound interest means you earn returns not only on your original investment but also on the returns it has already generated. Over long periods this snowball effect dominates: $10,000 invested at 7% annual return grows to roughly $19,672 in 10 years, $38,697 in 20 years, and $76,123 in 30 years. Time is the biggest lever — starting ten years earlier can matter more than saving a slightly larger amount later. Compounding works for you in investing and against you in debt (credit card balances compound the same way). Key takeaway: start early, contribute consistently, reinvest dividends, and keep fees low so more of the compounding stays in your pocket.

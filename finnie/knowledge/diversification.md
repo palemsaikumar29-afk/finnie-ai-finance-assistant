@@ -1,0 +1,3 @@
+# Diversification: Don't Put All Eggs in One Basket
+
+Diversification means spreading investments across assets that don't move in lockstep, so a single failure can't sink your portfolio. A portfolio of 20-30 uncorrelated stocks eliminates most company-specific (unsystematic) risk; what remains is market (systematic) risk, which diversification can't remove. True diversification spans dimensions: asset classes (stocks, bonds), geographies (US and international), sectors, and company sizes. Warning signs of fake diversification: owning five large-cap US tech funds, or holding stock in the same company that employs you. A single total-world stock index fund is already diversified for most investors.

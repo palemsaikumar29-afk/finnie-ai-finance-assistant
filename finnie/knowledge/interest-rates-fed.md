@@ -1,0 +1,3 @@
+# Interest Rates and the Federal Reserve
+
+The Federal Reserve sets the federal funds rate, the benchmark that ripples through mortgages, credit cards, savings yields, and asset prices. When the Fed raises rates to fight inflation, borrowing costs rise, bond prices fall, and growth-stock valuations compress (future earnings are discounted more heavily). When it cuts, the reverse happens. Markets move more on expectations of Fed policy than on the decisions themselves - 'don't fight the Fed' reflects how powerfully liquidity shapes returns. Long-term investors should understand the mechanism but not trade on Fed headlines.

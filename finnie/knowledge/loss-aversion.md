@@ -1,0 +1,3 @@
+# Loss Aversion and the Disposition Effect
+
+Loss aversion - feeling losses about twice as intensely as equal gains - drives the 'disposition effect': investors sell winners too early to lock in gains and hold losers too long to avoid admitting losses. This is backwards twice over: it cuts compounding short and concentrates the portfolio in its worst ideas, while also generating avoidable taxes on the winners sold. Countermeasures: judge positions by forward prospects not purchase price, use mechanical rebalancing, and in taxable accounts consider tax-loss harvesting losing positions instead of nursing them. Educational content only.

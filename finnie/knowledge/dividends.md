@@ -1,0 +1,3 @@
+# Dividends Explained
+
+Dividends are cash distributions companies pay shareholders from profits, usually quarterly. Mature, cash-generative firms (utilities, consumer staples) pay them; fast-growing firms often reinvest instead. A dividend is not free money - the stock price drops by roughly the dividend amount on the ex-dividend date. What matters is total return (price change + dividends). Dividend aristocrats - companies raising payouts 25+ consecutive years - signal durable businesses, but chasing the highest yields often leads to troubled companies about to cut. Reinvesting dividends is a major driver of long-term compounding.

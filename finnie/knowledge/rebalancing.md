@@ -1,0 +1,3 @@
+# Rebalancing Your Portfolio
+
+Over time, winners grow and your allocation drifts — a 80/20 stock/bond portfolio can become 90/10 after a bull run, silently raising your risk. Rebalancing sells some winners and buys laggards to restore your target mix. Two common methods: calendar rebalancing (e.g., annually) and threshold rebalancing (when any asset drifts 5%+ from target). Rebalancing is contrarian by design — it forces you to sell high and buy low — and studies show it mainly controls risk rather than boosting returns. In taxable accounts, prefer rebalancing with new contributions to avoid triggering capital gains taxes. Educational content only.

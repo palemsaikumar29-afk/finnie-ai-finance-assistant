@@ -1,0 +1,3 @@
+# Social Security Basics (Educational Overview)
+
+Social Security replaces roughly 40% of pre-retirement earnings for average earners. You can claim at 62 (reduced ~30%), at full retirement age 66-67 (100%), or delay to 70 (about 124% via 8%/year delayed credits). Breakeven math favors delaying if you expect longevity; health or income needs favor earlier. Benefits are based on your 35 highest-earning years. Up to 85% of benefits can be federally taxable depending on income. Spousal and survivor benefits add planning dimensions for couples. Treat it as a floor of retirement income, not the whole plan. Educational content only.

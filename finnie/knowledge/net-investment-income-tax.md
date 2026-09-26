@@ -1,0 +1,3 @@
+# Net Investment Income Tax (Educational Overview)
+
+High earners face an extra 3.8% federal tax on net investment income (interest, dividends, capital gains, rental income) above thresholds ($200k single / $250k married filing jointly). It stacks on top of capital-gains rates, pushing top long-term rates toward 23.8%. It doesn't apply to retirement-account distributions, municipal bond interest, or active business income. Planning levers: harvesting gains in lower-income years, Roth conversions in low-income windows, and muni bonds for taxable accounts. Educational content only - not tax advice.

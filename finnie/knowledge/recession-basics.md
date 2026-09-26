@@ -1,0 +1,3 @@
+# Recessions and Your Portfolio
+
+A recession is a broad economic contraction - falling output, rising unemployment - typically lasting months, not years. Stocks usually fall before recessions are declared and recover before they end; waiting for 'all clear' headlines means missing the rebound. The average bear market since WWII lasted about a year with ~35% declines, followed by longer bull markets. Recession prep is structural, not tactical: an emergency fund, appropriate stock/bond mix, and continued contributions (which buy shares cheaply). Predicting recessions reliably is a fool's errand - even professional economists mostly miss them in real time.

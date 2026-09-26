@@ -1,0 +1,3 @@
+# Index Funds Explained
+
+An index fund is a fund that tracks a market index such as the S&P 500 instead of trying to beat it. Because the strategy is passive — just owning the index's constituents in the right weights — costs are minimal: flagship S&P 500 index funds charge around 0.03% per year. Decades of data show most active managers underperform their benchmark after fees over 10-15 year horizons. Index funds give you instant diversification across hundreds of companies, transparent holdings, and low turnover (which also means fewer taxable distributions). Criticisms include concentration risk when a few mega-cap stocks dominate an index, but for core equity exposure, broad-market index funds remain the evidence-based default.

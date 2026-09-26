@@ -1,0 +1,3 @@
+# Dollar-Cost Averaging
+
+Dollar-cost averaging (DCA) means investing a fixed amount on a regular schedule — e.g., $500 every month — regardless of market levels. You automatically buy more shares when prices are low and fewer when high, which smooths your average cost and removes the need to time the market. It is psychologically powerful for nervous investors and is exactly what 401(k) payroll contributions do. Caveat: studies show lump-sum investing beats DCA about two-thirds of the time in rising markets, because markets trend up. DCA's real value is behavioral — it gets hesitant investors into the market and keeps them contributing through downturns.

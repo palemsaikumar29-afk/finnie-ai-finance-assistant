@@ -1,0 +1,3 @@
+# Asset Allocation: Your Most Important Decision
+
+Asset allocation — how you split money between stocks, bonds, and cash — explains the majority of a portfolio's long-term return differences. Stocks offer higher expected returns with higher volatility; bonds dampen volatility but drag on long-term growth. A common starting framework: subtract your age from 110-120 to get a rough stock percentage, then adjust for your risk tolerance and time horizon. Money needed within 3-5 years shouldn't be heavily in stocks. Allocation should reflect goals, not market forecasts — chasing last year's winner is how investors buy high and sell low. Revisit your allocation annually or after major life changes.

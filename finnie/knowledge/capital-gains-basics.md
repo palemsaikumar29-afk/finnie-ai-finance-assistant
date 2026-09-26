@@ -1,0 +1,3 @@
+# Capital Gains Tax Basics (Educational Overview)
+
+When you sell an investment for more than you paid, the profit is a capital gain. Short-term gains (assets held 1 year or less) are taxed as ordinary income; long-term gains (over 1 year) get preferential rates (0%, 15%, or 20% federally depending on income, plus possible state tax and the 3.8% net investment income tax for high earners). This rate gap is why holding periods matter - flipping stocks yearly can nearly double your tax drag versus holding. Losses can offset gains. Retirement accounts (401(k), IRA) shield you from annual capital-gains tax entirely. Educational content only - not tax advice.

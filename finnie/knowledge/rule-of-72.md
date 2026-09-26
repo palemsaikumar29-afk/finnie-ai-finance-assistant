@@ -1,0 +1,3 @@
+# The Rule of 72: Doubling Your Money
+
+The Rule of 72 is a quick mental shortcut: divide 72 by your annual rate of return to estimate how many years it takes money to double. At 7%, money doubles in about 10.3 years; at 10%, about 7.2 years; at 3% (a savings account), about 24 years. It also works in reverse for inflation: at 3% inflation, prices double roughly every 24 years, halving your purchasing power. The rule is an approximation (most accurate for rates between 6% and 10%) but it is invaluable for sanity-checking any return claim — if someone promises 20% annual returns, the rule says they claim to double your money every 3.6 years, which should invite serious skepticism.

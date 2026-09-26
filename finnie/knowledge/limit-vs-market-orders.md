@@ -1,0 +1,3 @@
+# Market vs Limit Orders
+
+A market order executes immediately at the best available price - fast but you accept whatever the market gives, including slippage in volatile or thin trading. A limit order executes only at your price or better - price control but no execution guarantee. For liquid ETFs and large-caps during market hours, market orders are usually fine; for thinly traded stocks, large orders, or volatile moments, limit orders protect you. Never place market orders outside regular hours when spreads widen. Stop orders trigger at a price then become market orders - they don't guarantee the trigger price in a gap-down.

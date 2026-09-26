@@ -1,0 +1,3 @@
+# 401(k) Basics
+
+A 401(k) is an employer-sponsored retirement account. Contributions are made from your paycheck, often with an employer match — e.g., 50% of contributions up to 6% of salary, which is effectively free money you should capture first. In 2026 the employee contribution limit is $24,500 ($31,500 if 50+). Traditional 401(k) contributions are pre-tax (you pay tax on withdrawal in retirement); Roth 401(k) contributions are after-tax (qualified withdrawals are tax-free). Money grows tax-deferred either way. Investments are chosen from your plan's menu — target-date funds are a reasonable default. Withdrawals before age 59½ generally incur a 10% penalty plus taxes, so treat this as long-term money.

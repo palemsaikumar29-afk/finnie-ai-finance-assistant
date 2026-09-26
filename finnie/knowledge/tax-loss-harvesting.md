@@ -1,0 +1,3 @@
+# Tax-Loss Harvesting (Educational Overview)
+
+Tax-loss harvesting means selling investments at a loss to offset realized capital gains (and up to $3,000/year of ordinary income), then buying a similar - but not 'substantially identical' - asset to maintain exposure. It doesn't eliminate taxes; it defers them by lowering your cost basis, which has time-value. Beware the wash-sale rule: repurchasing the same security within 30 days before or after the sale disallows the loss. Harvesting is most valuable in high-income years and volatile markets. This is general education, not tax advice - tax rules are complex and personal; consult a qualified tax professional.

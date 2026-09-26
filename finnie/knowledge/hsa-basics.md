@@ -1,0 +1,3 @@
+# HSA: The Triple-Tax-Advantaged Account (Educational Overview)
+
+Health Savings Accounts, available with high-deductible health plans, offer a rare triple tax benefit: deductible contributions, tax-free growth, and tax-free withdrawals for qualified medical expenses. Unlike FSAs, HSAs have no use-it-or-lose-it rule and the account is yours if you change jobs. After 65, withdrawals for non-medical expenses are taxed like a traditional IRA (no penalty), making the HSA a stealth retirement account: pay medical bills from cash, let the HSA compound, and reimburse yourself decades later from saved receipts. 2026 limits: $4,400 individual / $8,750 family. Educational content only.

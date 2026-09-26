@@ -1,0 +1,3 @@
+# Expense Ratios: The Fee That Compounds Against You
+
+An expense ratio is the annual percentage a fund charges on assets — 0.03% on a $100,000 portfolio costs $30/year; 1.00% costs $1,000/year. The gap compounds brutally: over 30 years at 7% gross returns, a 1% fee consumes roughly 25-30% of your potential wealth versus a 0.03% fund. Fees are the most reliable predictor of fund performance — low-cost funds beat high-cost peers far more consistently than past returns predict future winners. Always check the expense ratio before buying any fund, and beware of 12b-1 marketing fees and front-end loads layered on top.

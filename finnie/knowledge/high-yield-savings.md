@@ -1,0 +1,3 @@
+# High-Yield Savings Accounts
+
+High-yield savings accounts (HYSAs) from online banks pay far more than traditional brick-and-mortar savings - often 4-5% when the Fed funds rate is elevated - with FDIC insurance up to $250,000 per depositor per bank. They are ideal parking spots for emergency funds and short-term goals: liquid, safe, and earning something. Rates are variable and fall when the Fed cuts. Watch for teaser rates, withdrawal limits, and transfer delays (1-3 business days). Never confuse 'high-yield' with 'high return' - after inflation, cash barely grows; its job is safety, not wealth-building.

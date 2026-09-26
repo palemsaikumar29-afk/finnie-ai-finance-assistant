@@ -1,0 +1,3 @@
+# Corporate Bonds and Credit Ratings
+
+Corporate bonds pay higher yields than Treasuries to compensate for default risk. Credit agencies (Moody's, S&P, Fitch) rate issuers from AAA down to junk (below BBB-/Baa3). Investment-grade bonds default rarely; high-yield ('junk') bonds pay more but behave somewhat like stocks in crises, falling exactly when you want bonds to stabilize you. Bond funds blend hundreds of issues, diversifying away single-issuer risk. Watch the fund's average credit quality and duration - two high-yield funds can behave very differently from a Treasury fund despite all being called 'bond funds'.

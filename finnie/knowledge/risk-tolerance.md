@@ -1,0 +1,3 @@
+# Risk Tolerance vs Risk Capacity
+
+Risk tolerance is psychological — how much volatility you can stomach without panic-selling. Risk capacity is financial — how much loss you can afford given your time horizon and obligations. A 25-year-old with stable income has high capacity even if their tolerance is shaky; a retiree drawing income has low capacity regardless of nerves. The 2008 and 2020 crashes showed many investors overestimated their tolerance. Gauge yours honestly: if a 30% portfolio drop would make you sell everything, your equity allocation is too high. The best portfolio is the one you can hold through a crisis — capacity sets the ceiling, tolerance sets the floor.

@@ -1,0 +1,3 @@
+# Traditional vs Roth IRA
+
+IRAs let individuals save for retirement outside an employer plan, with a 2026 contribution limit of $7,500 ($8,500 if 50+). A traditional IRA may give you a tax deduction now; you pay ordinary income tax on withdrawals in retirement. A Roth IRA gives no deduction now, but qualified withdrawals (account open 5+ years and age 59½+) are completely tax-free. Rough rule: choose Roth if you expect to be in a higher tax bracket in retirement than today (common for young earners); choose traditional if you expect a lower bracket later. High earners may be phased out of Roth contributions and use the 'backdoor Roth' strategy. This is educational content, not tax advice — confirm with a tax professional.

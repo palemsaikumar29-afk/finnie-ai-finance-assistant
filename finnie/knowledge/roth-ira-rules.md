@@ -1,0 +1,3 @@
+# Roth IRA Rules and Withdrawals
+
+Roth IRAs have unique flexibility: you can always withdraw your contributions (not earnings) tax- and penalty-free at any time, because you already paid tax on them. Earnings can be withdrawn tax-free only as a 'qualified distribution' — the account must be open at least 5 years and you must be 59½, disabled, or using up to $10,000 for a first home. Non-qualified earnings withdrawals face income tax plus a 10% early-withdrawal penalty, with exceptions for hardships like medical expenses. Unlike traditional IRAs, Roth IRAs have no required minimum distributions for the original owner. Income limits phase out direct Roth contributions for high earners. Educational content only — not tax advice.

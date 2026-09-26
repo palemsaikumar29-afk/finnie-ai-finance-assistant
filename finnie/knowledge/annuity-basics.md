@@ -1,0 +1,3 @@
+# Annuities Basics (Educational Overview)
+
+Annuities are insurance contracts that convert lump sums into income streams. Immediate annuities start paying right away - useful for longevity insurance in retirement. Deferred and variable annuities grow tax-deferred but often carry high fees (2-3%+ annually), surrender charges, and complexity that benefits the seller more than you. Simple single-premium immediate annuities (SPIAs) are the most defensible type; indexed and variable annuities deserve extreme skepticism and a fee audit. Never buy an annuity you can't explain simply. Educational content only.

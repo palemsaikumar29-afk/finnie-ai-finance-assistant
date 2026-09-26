@@ -1,0 +1,3 @@
+# Required Minimum Distributions (Educational Overview)
+
+The IRS forces withdrawals from traditional 401(k)s and IRAs starting at age 73 (75 for those born 1960+, under current law) - required minimum distributions. RMDs are taxed as ordinary income and calculated from prior-year-end balances divided by life-expectancy factors. Missing an RMD triggers a steep excise tax (25%, down from 50%). Strategies to manage the tax torpedo: Roth conversions in your 60s before RMDs begin, and qualified charitable distributions (QCDs) directly to charities, which satisfy RMDs without taxable income. Roth IRAs have no lifetime RMDs for owners. Educational content only.

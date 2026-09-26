@@ -1,0 +1,3 @@
+# ETFs vs Mutual Funds
+
+Exchange-traded funds (ETFs) and mutual funds both pool investor money to buy diversified portfolios, but differ in trading, pricing, and taxes. ETFs trade on exchanges all day at market prices like stocks; mutual funds price once daily after market close. ETFs are generally more tax-efficient because their creation/redemption mechanism avoids distributing capital gains to shareholders the way mutual funds do. Index ETFs typically charge 0.03%-0.20% annually, far below many actively managed mutual funds at 0.50%-1.50%. Mutual funds may still suit investors who prefer automatic investing with fractional dollars or whose 401(k) offers only mutual funds. For most long-term investors, low-cost index ETFs are the default choice.

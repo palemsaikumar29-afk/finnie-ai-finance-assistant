@@ -1,0 +1,3 @@
+# Target-Date Funds: Set-and-Forget Retirement
+
+Target-date funds pick a year near your retirement and automatically glide from aggressive (mostly stocks) to conservative (more bonds) as the date approaches. They are the default in many 401(k) plans for good reason: one fund handles diversification and rebalancing. Check the expense ratio (index-based ones cost ~0.05-0.15%; active versions can exceed 0.60%), the glide path's landing point (some keep gliding past retirement, others stop), and whether the date matches your actual horizon. One-fund simplicity beats a neglected hand-built portfolio for most busy savers.

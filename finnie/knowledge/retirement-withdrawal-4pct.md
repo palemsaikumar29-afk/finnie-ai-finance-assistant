@@ -1,0 +1,3 @@
+# The 4% Rule for Retirement Withdrawals
+
+The 4% rule (from the 1994 Bengen study) suggests withdrawing 4% of your portfolio in year one of retirement, then adjusting for inflation annually, giving ~30 years of spending with high historical success odds. It's a planning rule of thumb, not a law: low bond yields and long retirements argue for 3-3.5% for extra safety; flexible strategies (cutting spending after down years) stretch money further. Sequence-of-returns risk - big losses early in retirement - is the real danger the rule guards against. Use it to size your target nest egg (25x annual spending), then refine with professional planning.

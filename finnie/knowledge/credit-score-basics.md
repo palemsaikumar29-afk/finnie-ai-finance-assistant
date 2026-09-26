@@ -1,0 +1,3 @@
+# Credit Scores Basics
+
+A credit score (FICO/VantageScore, 300-850) summarizes your creditworthiness. Biggest factors: payment history (35%), amounts owed/utilization (30%), length of history (15%), new credit (10%), mix (10%). Higher scores unlock lower mortgage, auto, and card rates - a 1% mortgage-rate difference on $400k costs ~$85,000 over 30 years. Build credit by paying on time, keeping utilization under 30% (under 10% is better), and keeping old cards open. Check reports free annually at AnnualCreditReport.com and dispute errors. You don't need to carry a balance or pay interest to build credit - that's a myth.

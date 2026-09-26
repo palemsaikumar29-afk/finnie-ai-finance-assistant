@@ -1,0 +1,3 @@
+# Estate Planning Basics (Educational Overview)
+
+Estate planning isn't just for the wealthy: everyone needs a will (naming guardians for minor children), beneficiary designations on retirement accounts and insurance (these override wills), a durable power of attorney, and a healthcare directive. Without them, state law decides - slowly and expensively. Review beneficiaries after marriage, divorce, births, and deaths. For larger estates, trusts can avoid probate and manage tax exposure; the federal estate-tax exemption is historically high but scheduled to change. This is general education, not legal or tax advice - consult an attorney.

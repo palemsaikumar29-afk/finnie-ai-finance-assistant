@@ -1,0 +1,3 @@
+# 529 College Savings Plans (Educational Overview)
+
+529 plans are tax-advantaged accounts for education: contributions grow tax-deferred and withdrawals for qualified education expenses (tuition, books, room and board) are federally tax-free; many states offer deductions for contributions. You remain the account owner and can change beneficiaries to another family member. Non-qualified withdrawals face income tax plus a 10% penalty on earnings. Recent rules allow up to $35,000 lifetime rollover of unused 529 funds to the beneficiary's Roth IRA. Start early - education inflation has outpaced general inflation for decades. Educational content only.

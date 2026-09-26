@@ -1,0 +1,3 @@
+# Backdoor Roth IRA (Educational Overview)
+
+High earners phased out of direct Roth IRA contributions can use the 'backdoor': contribute after-tax dollars to a traditional IRA, then convert to Roth. Since the contribution was after-tax, the conversion is mostly tax-free - except the pro-rata rule, which taxes the conversion proportionally if you hold other pre-tax IRA balances. The cleanest setup: roll pre-tax IRA money into a 401(k) first, leaving only the after-tax contribution to convert. Congress has periodically threatened to close this, so verify current law. Educational content only - not tax advice; the pro-rata math is easy to get wrong.

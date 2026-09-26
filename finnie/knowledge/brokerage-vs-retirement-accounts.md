@@ -1,0 +1,3 @@
+# Brokerage vs Retirement Accounts
+
+Taxable brokerage accounts offer total flexibility - withdraw anytime, no penalties - but you owe tax yearly on dividends and realized gains. Retirement accounts (401(k), IRA) give tax deductions or tax-free growth but lock money up until 59.5 with penalties for early raids. Funding order for most: 401(k) to the employer match, then HSA if eligible, then IRA, then max 401(k), then taxable brokerage. Asset location matters too: hold tax-inefficient assets (bonds, REITs) in tax-advantaged accounts and tax-efficient index equities in taxable ones. Educational content only.
