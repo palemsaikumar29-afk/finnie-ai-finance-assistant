@@ -118,12 +118,12 @@ with tab_goals:
             monthly = target * (rate / 100 / 12) / ((1 + rate / 100 / 12) ** (years * 12) - 1)
             total_in = monthly * years * 12
             st.write(
-                f"**{rate:.0f}% return** → save **${monthly:,.2f}/month** "
-                f"(${total_in:,.0f} contributions; compounding covers the rest)"
+                f"**{rate:.0f}% return** → save **\\${monthly:,.2f}/month** "
+                f"(\\${total_in:,.0f} contributions; compounding covers the rest)"
             )
         st.caption("Monthly compounding, before taxes/fees/inflation. Educational estimate only.")
         proj = compound_growth(500, 7.0, years)
-        st.info(f"For reference: $500/month at 7% for {years} years → ${proj:,.0f}.")
+        st.info(f"For reference: \\$500/month at 7% for {years} years → \\${proj:,.0f}.")
 
 # ------------------------------------------------------------ Knowledge
 with tab_knowledge:

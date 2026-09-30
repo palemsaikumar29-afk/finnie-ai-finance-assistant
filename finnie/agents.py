@@ -116,11 +116,11 @@ def _lump_sum_answer(query: str) -> str | None:
     return "\n".join([
         "# One-Time Investment Growth",
         "",
-        f"**${principal:,.2f}** invested once at **{rate_pct:g}%** annual return "
-        f"for **{years:g} years** grows to **${fv:,.2f}**.",
+        f"**\\${principal:,.2f}** invested once at **{rate_pct:g}%** annual return "
+        f"for **{years:g} years** grows to **\\${fv:,.2f}**.",
         "",
-        f"Calculation: ${principal:,.2f} × (1 + {rate_pct:g}%)^({years:g}) "
-        f"= ${fv:,.2f}",
+        f"Calculation: \\${principal:,.2f} × (1 + {rate_pct:g}%)^({years:g}) "
+        f"= \\${fv:,.2f}",
         "",
         "Assumptions: annual compounding, return before taxes/fees/inflation. "
         "_Educational estimate only — not financial advice._",
@@ -169,17 +169,17 @@ async def portfolio_agent(query: str, context: dict) -> str:
 
     lines = [
         "# Portfolio Analysis",
-        f"**Total value:** ${summary['total_value']:,.2f}",
-        f"**Total P&L:** ${summary['total_pnl']:,.2f} ({summary['total_pnl_pct']:+.2f}%)",
+        f"**Total value:** \\${summary['total_value']:,.2f}",
+        f"**Total P&L:** \\${summary['total_pnl']:,.2f} ({summary['total_pnl_pct']:+.2f}%)",
         "",
         "| Symbol | Shares | Price | Value | Weight | P&L |",
         "|---|---|---|---|---|---|",
     ]
     for r in summary["positions"]:
         lines.append(
-            f"| {r['symbol']} | {r['shares']} | ${r['price']:.2f} | "
-            f"${r['value']:,.2f} | {r['weight_pct']:.1f}% | "
-            f"${r['pnl']:+,.2f} ({r['pnl_pct']:+.1f}%) |"
+            f"| {r['symbol']} | {r['shares']} | \\${r['price']:.2f} | "
+            f"\\${r['value']:,.2f} | {r['weight_pct']:.1f}% | "
+            f"\\${r['pnl']:+,.2f} ({r['pnl_pct']:+.1f}%) |"
         )
     mock_note = ""
     if any(src == "mock" for src in sources.values()):
@@ -225,7 +225,7 @@ async def market_agent(query: str, context: dict) -> str:
         q = await get_quote(s)
         arrow = "▲" if q["change_pct"] >= 0 else "▼"
         cards.append(
-            f"- **{q['symbol']}** ({q['name']}): ${q['price']:.2f} "
+            f"- **{q['symbol']}** ({q['name']}): \\${q['price']:.2f} "
             f"{arrow} {q['change_pct']:+.2f}%"
         )
     live = (await get_quote(symbols[0]))["source"] == "alpha_vantage"
@@ -278,7 +278,7 @@ async def goals_agent(query: str, context: dict) -> str:
     if not parsed:
         return (
             "Tell me your goal in a sentence like: "
-            "**'I want $500k in 20 years'** or **'I need $1 million in 15 years'**, "
+            "**'I want \\$500k in 20 years'** or **'I need \\$1 million in 15 years'**, "
             "and I'll estimate the monthly savings needed at a few return assumptions."
         )
     target, years = parsed
@@ -289,17 +289,17 @@ async def goals_agent(query: str, context: dict) -> str:
         monthly = target * r / ((1 + r) ** n - 1) if r > 0 else target / n
         rows.append((rate, monthly))
     lines = [
-        f"# Goal Plan: ${target:,.0f} in {years} years",
+        f"# Goal Plan: \\${target:,.0f} in {years} years",
         "",
         "| Assumed annual return | Monthly savings needed |",
         "|---|---|",
     ]
     for rate, monthly in rows:
-        lines.append(f"| {rate:.0f}% | ${monthly:,.2f} |")
+        lines.append(f"| {rate:.0f}% | \\${monthly:,.2f} |")
     lines += [
         "",
-        f"At 7% with ${rows[1][1]:,.2f}/month you'd contribute "
-        f"${rows[1][1]*years*12:,.0f} total — compounding does the rest.",
+        f"At 7% with \\${rows[1][1]:,.2f}/month you'd contribute "
+        f"\\${rows[1][1]*years*12:,.0f} total — compounding does the rest.",
         "",
         "Assumptions: monthly contributions, monthly compounding, returns "
         "before taxes/fees/inflation. _Educational estimate only — not "
