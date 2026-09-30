@@ -76,7 +76,7 @@ _LUMP_SUM_SIGNALS = re.compile(
     r"\b(?:one[-\s]?time|once|lump[-\s]?sum|single investment|one[-\s]?off|future value)\b",
     re.IGNORECASE,
 )
-_MONEY_RE = re.compile(r"\$([\d,]+(?:\.\d+)?)")
+_MONEY_RE = re.compile(r"\$([\d,]+(?:\.\d+)?)\s*([kKmM]?)\b")
 _RATE_RE = re.compile(r"(\d+(?:\.\d+)?)\s*(?:%|percent)")
 _YEARS_RE = re.compile(r"(\d+(?:\.\d+)?)\s*years?")
 
@@ -88,12 +88,18 @@ def _parse_lump_sum(query: str) -> tuple[float, float, float] | None:
     """
     if not _LUMP_SUM_SIGNALS.search(query):
         return None
-    amounts = _MONEY_RE.findall(query.replace(",", ""))
+    m = _MONEY_RE.search(query.replace(",", ""))
     rate = _RATE_RE.search(query)
     years = _YEARS_RE.search(query)
-    if not amounts or rate is None or years is None:
+    if not m or rate is None or years is None:
         return None
-    return float(amounts[0]), float(rate.group(1)), float(years.group(1))
+    principal = float(m.group(1))
+    suffix = m.group(2).lower()
+    if suffix == "k":
+        principal *= 1_000
+    elif suffix == "m":
+        principal *= 1_000_000
+    return principal, float(rate.group(1)), float(years.group(1))
 
 
 def _lump_sum_answer(query: str) -> str | None:

@@ -94,3 +94,19 @@ def test_run_finnie_routes_and_answers():
         assert "not tax advice" in result["answer"].lower()
     finally:
         cfg.settings.OPENAI_API_KEY = orig
+
+
+def test_lump_sum_k_suffix_parses_as_thousands():
+    """Regression: the original end-user wording used '$10k' shorthand —
+    it must parse as $10,000 (not $10.00) and yield $19,671.51."""
+    from finnie.agents import _lump_sum_answer
+
+    answer = _lump_sum_answer(
+        "If I invest $10k once at 7% for 10 years, how much will I have?"
+    )
+    assert answer is not None
+    assert "19,671.51" in answer, answer
+
+    answer_m = _lump_sum_answer("Future value of $2.5M lump sum at 8% for 10 years?")
+    assert answer_m is not None
+    assert "5,397,312.49" in answer_m, answer_m

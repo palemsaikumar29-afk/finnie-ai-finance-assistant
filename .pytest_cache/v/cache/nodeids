@@ -7,6 +7,7 @@
   "tests/test_router.py::test_classify_sync_portfolio",
   "tests/test_router.py::test_classify_sync_tax",
   "tests/test_router.py::test_lump_sum_fv_answer_contains_correct_amount",
+  "tests/test_router.py::test_lump_sum_k_suffix_parses_as_thousands",
   "tests/test_router.py::test_run_finnie_routes_and_answers",
   "tests/test_tools.py::test_compound_growth",
   "tests/test_tools.py::test_get_quote_mock_fallback",
