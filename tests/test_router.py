@@ -34,6 +34,46 @@ def test_classify_sync_default_finance_qa():
     assert classify_sync("Explain ETFs") == "finance_qa"
 
 
+# Regression: the verified T1 end-user failure — a one-time investment
+# growth question was routed to goals and answered with a monthly-savings
+# plan. It must route to finance_qa instead.
+_LUMP_SUM_Q1 = (
+    "What is compound interest? If I invest $10,000 once at 7% annual "
+    "return for 10 years, how much will I have?"
+)
+_LUMP_SUM_Q2 = (
+    "Calculate the future value: one-time investment of $10000, 7 percent "
+    "annual return, 10 years. Just give me the final dollar amount."
+)
+
+
+def test_classify_sync_lump_sum_routes_to_finance_qa():
+    assert classify_sync(_LUMP_SUM_Q1) == "finance_qa"
+    assert classify_sync(_LUMP_SUM_Q2) == "finance_qa"
+    assert classify_sync("Lump sum of $50,000 at 6% for 20 years") == "finance_qa"
+    # Genuine recurring-savings goals still route to goals.
+    assert classify_sync("I want $1 million in 20 years") == "goals"
+    assert classify_sync("How much should I save for retirement?") == "goals"
+
+
+def test_lump_sum_fv_answer_contains_correct_amount():
+    import finnie.config as cfg
+
+    # Force offline mode so the test is hermetic.
+    orig = cfg.settings.OPENAI_API_KEY
+    cfg.settings.OPENAI_API_KEY = None
+    try:
+        for q in (_LUMP_SUM_Q1, _LUMP_SUM_Q2):
+            result = asyncio.run(run_finnie(q))
+            assert result["route"] == "finance_qa", f"route was {result['route']}"
+            # $10,000 x 1.07^10 = $19,671.51
+            assert "19,671.51" in result["answer"], result["answer"]
+            # Must NOT be a monthly-savings plan.
+            assert "Monthly savings" not in result["answer"]
+    finally:
+        cfg.settings.OPENAI_API_KEY = orig
+
+
 def test_run_finnie_routes_and_answers():
     # Force offline mode so the test is hermetic.
     import finnie.config as cfg

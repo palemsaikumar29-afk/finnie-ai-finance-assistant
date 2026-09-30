@@ -15,6 +15,7 @@ from finnie.tools import (
     DEFAULT_PORTFOLIO,
     compound_growth,
     get_quote,
+    lump_sum_growth,
     portfolio_summary,
     search_news,
 )
@@ -71,7 +72,62 @@ def _citations(query: str) -> str:
 # ---------------------------------------------------------------------------
 # 1. Finance Q&A
 # ---------------------------------------------------------------------------
+_LUMP_SUM_SIGNALS = re.compile(
+    r"\b(?:one[-\s]?time|once|lump[-\s]?sum|single investment|one[-\s]?off|future value)\b",
+    re.IGNORECASE,
+)
+_MONEY_RE = re.compile(r"\$([\d,]+(?:\.\d+)?)")
+_RATE_RE = re.compile(r"(\d+(?:\.\d+)?)\s*(?:%|percent)")
+_YEARS_RE = re.compile(r"(\d+(?:\.\d+)?)\s*years?")
+
+
+def _parse_lump_sum(query: str) -> tuple[float, float, float] | None:
+    """Extract (principal, annual_rate_pct, years) from a one-time
+    investment growth question like 'invest $10,000 once at 7% for 10
+    years'. Returns None when the query isn't a lump-sum growth question.
+    """
+    if not _LUMP_SUM_SIGNALS.search(query):
+        return None
+    amounts = _MONEY_RE.findall(query.replace(",", ""))
+    rate = _RATE_RE.search(query)
+    years = _YEARS_RE.search(query)
+    if not amounts or rate is None or years is None:
+        return None
+    return float(amounts[0]), float(rate.group(1)), float(years.group(1))
+
+
+def _lump_sum_answer(query: str) -> str | None:
+    """Deterministic FV answer for one-time investment growth questions.
+
+    Computes FV = principal * (1 + r) ** years exactly — this is a lump
+    sum, never a monthly-savings plan.
+    """
+    parsed = _parse_lump_sum(query)
+    if parsed is None:
+        return None
+    principal, rate_pct, years = parsed
+    fv = lump_sum_growth(principal, rate_pct, years)
+    return "\n".join([
+        "# One-Time Investment Growth",
+        "",
+        f"**${principal:,.2f}** invested once at **{rate_pct:g}%** annual return "
+        f"for **{years:g} years** grows to **${fv:,.2f}**.",
+        "",
+        f"Calculation: ${principal:,.2f} × (1 + {rate_pct:g}%)^({years:g}) "
+        f"= ${fv:,.2f}",
+        "",
+        "Assumptions: annual compounding, return before taxes/fees/inflation. "
+        "_Educational estimate only — not financial advice._",
+    ])
+
+
 async def finance_qa(query: str, context: dict) -> str:
+    # One-time investment growth is answered deterministically (works
+    # offline and with the LLM): never let it fall through to a generic
+    # or LLM-guessed response.
+    lump = _lump_sum_answer(query)
+    if lump:
+        return lump
     grounding = _rag_block(query)
     answer = await _ask_llm(
         "You are FINNIE, a friendly finance educator. Answer concisely in "
@@ -207,6 +263,11 @@ def _parse_goal(query: str) -> tuple[float, int] | None:
 
 
 async def goals_agent(query: str, context: dict) -> str:
+    # Safety net: a one-time investment growth question must get its
+    # lump-sum FV answer even if the router ever sends it here.
+    lump = _lump_sum_answer(query)
+    if lump:
+        return lump
     parsed = _parse_goal(query)
     if not parsed:
         return (

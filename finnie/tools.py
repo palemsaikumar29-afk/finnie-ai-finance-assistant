@@ -204,6 +204,18 @@ def compound_growth(monthly: float, annual_rate_pct: float, years: int) -> float
     return monthly * ((1 + r) ** n - 1) / r
 
 
+def lump_sum_growth(principal: float, annual_rate_pct: float, years: float) -> float:
+    """Future value of a one-time investment with annual compounding.
+
+    FV = principal * (1 + r) ** years. A lump sum is NOT a stream of monthly
+    contributions, so it must never be answered with a monthly-savings plan.
+    """
+    if years <= 0:
+        return principal
+    r = annual_rate_pct / 100
+    return principal * ((1 + r) ** years)
+
+
 def portfolio_summary(positions: list[dict], prices: dict[str, float]) -> dict:
     """positions: [{symbol, shares, avg_cost}], prices: {symbol: price}."""
     rows, total_value, total_cost = [], 0.0, 0.0

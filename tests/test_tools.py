@@ -55,6 +55,16 @@ def test_compound_growth():
     assert tools.compound_growth(100, 0, 1) == 1200
 
 
+def test_lump_sum_growth():
+    # $10,000 x 1.07^10 = $19,671.51 (regression: the T1 failing input)
+    fv = tools.lump_sum_growth(10000, 7.0, 10)
+    assert abs(fv - 19671.51) < 0.01
+    # Zero rate = principal back
+    assert tools.lump_sum_growth(1000, 0, 5) == 1000
+    # Fractional years handled
+    assert tools.lump_sum_growth(1000, 10.0, 0.5) > 1000
+
+
 def test_portfolio_summary_math():
     positions = [{"symbol": "AAPL", "shares": 10, "avg_cost": 100.0}]
     s = tools.portfolio_summary(positions, {"AAPL": 150.0})

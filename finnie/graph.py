@@ -6,7 +6,7 @@ from typing import TypedDict
 
 from langgraph.graph import END, StateGraph
 
-from finnie.agents import AGENTS, _ask_llm
+from finnie.agents import AGENTS, _ask_llm, _parse_lump_sum
 from finnie.config import settings
 
 
@@ -18,12 +18,18 @@ class FinnieState(TypedDict):
 
 
 ROUTER_PROMPT = """You are FINNIE's router. Classify the user query into exactly one of:
-- finance_qa: general finance concepts, how-tos, definitions
+- finance_qa: general finance concepts, how-tos, definitions, and ONE-TIME
+  investment growth calculations (e.g. "invest $10,000 once at 7% for 10
+  years — how much will I have?", "future value of a lump sum")
 - portfolio: questions about the user's holdings, allocation, performance
 - market: stock/ETF prices, ticker quotes, market moves
-- goals: savings targets, retirement planning, "how much do I need"
+- goals: savings targets, retirement planning, recurring contributions,
+  "how much do I need to SAVE (per month)"
 - news: recent headlines, current events, news about a company/market
 - tax_education: any question about taxes (answer educationally, never advice)
+
+IMPORTANT: a one-time investment growth question is finance_qa, NEVER goals.
+goals is only for questions about saving repeatedly toward a target.
 
 Reply with ONLY the category name."""
 
@@ -40,6 +46,11 @@ _KEYWORD_ROUTES: list[tuple[str, list[str]]] = [
 
 def classify_sync(query: str) -> str:
     q = query.lower()
+    # One-time investment growth ("invest $X once at r% for N years") is a
+    # finance-QA calculation — check before the keyword rules so the
+    # goals entry ("$", "how much") can't swallow it.
+    if _parse_lump_sum(query) is not None:
+        return "finance_qa"
     for route, keywords in _KEYWORD_ROUTES:
         if any(k in q for k in keywords):
             return route
