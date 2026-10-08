@@ -81,12 +81,22 @@ _RATE_RE = re.compile(r"(\d+(?:\.\d+)?)\s*(?:%|percent)")
 _YEARS_RE = re.compile(r"(\d+(?:\.\d+)?)\s*years?")
 
 
+# Growth phrasings that lack the explicit lump-sum signal words, e.g.
+# "how much will $10k grow at 7%". These are one-time growth questions
+# (finance_qa) — they must never be answered with a monthly-savings plan.
+_GROWTH_SIGNALS = re.compile(
+    r"\b(?:grow|grows|growing|growth|will be worth|end up with|turn(?:s|ed)? into)\b",
+    re.IGNORECASE,
+)
+
+
 def _parse_lump_sum(query: str) -> tuple[float, float, float] | None:
     """Extract (principal, annual_rate_pct, years) from a one-time
     investment growth question like 'invest $10,000 once at 7% for 10
-    years'. Returns None when the query isn't a lump-sum growth question.
+    years' or 'how much will $10k grow at 7% for 10 years?'.
+    Returns None when the query isn't a lump-sum growth question.
     """
-    if not _LUMP_SUM_SIGNALS.search(query):
+    if not _LUMP_SUM_SIGNALS.search(query) and not _GROWTH_SIGNALS.search(query):
         return None
     m = _MONEY_RE.search(query.replace(",", ""))
     rate = _RATE_RE.search(query)
@@ -127,20 +137,95 @@ def _lump_sum_answer(query: str) -> str | None:
     ])
 
 
-async def finance_qa(query: str, context: dict) -> str:
-    # One-time investment growth is answered deterministically (works
-    # offline and with the LLM): never let it fall through to a generic
-    # or LLM-guessed response.
+def _looks_like_growth_question(query: str) -> bool:
+    """Money + rate + growth phrasing, e.g. 'how much will $10k grow at
+    7%'. The time horizon may be missing — it is still a finance-QA
+    growth question, never a recurring-savings goal."""
+    if not _GROWTH_SIGNALS.search(query):
+        return False
+    q = query.replace(",", "")
+    return _MONEY_RE.search(q) is not None and _RATE_RE.search(q) is not None
+
+
+def _parse_growth_amount_rate(query: str) -> tuple[float, float] | None:
+    """Extract (principal, annual_rate_pct) from a growth phrasing that
+    may not state a time horizon."""
+    q = query.replace(",", "")
+    m = _MONEY_RE.search(q)
+    rate = _RATE_RE.search(q)
+    if not m or rate is None:
+        return None
+    principal = float(m.group(1))
+    suffix = m.group(2).lower()
+    if suffix == "k":
+        principal *= 1_000
+    elif suffix == "m":
+        principal *= 1_000_000
+    return principal, float(rate.group(1))
+
+
+def _growth_years_prompt(principal: float, rate_pct: float) -> str:
+    """Honest clarifying prompt when a growth question lacks a horizon."""
+    return "\n".join([
+        "# One-Time Investment Growth",
+        "",
+        f"To project **\\${principal:,.2f}** growing at **{rate_pct:g}%**, "
+        "I need the time horizon — **over how many years?**",
+        "",
+        "For example: *'how much will $10k grow at 7% for 10 years?'*",
+        "",
+        "_Educational estimate only — not financial advice._",
+    ])
+
+
+def _growth_answer(query: str) -> str | None:
+    """FV answer for growth phrasings; a clarifying prompt when the time
+    horizon is missing. Returns None when the query isn't growth-like."""
     lump = _lump_sum_answer(query)
     if lump:
         return lump
+    if _looks_like_growth_question(query):
+        parsed = _parse_growth_amount_rate(query)
+        if parsed is not None:
+            principal, rate_pct = parsed
+            return _growth_years_prompt(principal, rate_pct)
+    return None
+
+
+def _history_block(context: dict, max_turns: int = 4) -> str:
+    """Recent conversation turns formatted for an LLM prompt."""
+    turns = context.get("history") or []
+    lines = []
+    for t in turns[-max_turns:]:
+        role = t.get("role", "")
+        content = (t.get("content") or "")[:400]
+        if role in ("user", "assistant") and content:
+            lines.append(f"{role}: {content}")
+    return "\n".join(lines)
+
+
+async def finance_qa(query: str, context: dict) -> str:
+    # One-time investment growth is answered deterministically (works
+    # offline and with the LLM): never let it fall through to a generic
+    # or LLM-guessed response. Growth phrasings without a time horizon
+    # get an honest clarifying prompt instead of a savings plan.
+    growth = _growth_answer(query)
+    if growth:
+        return growth
     grounding = _rag_block(query)
+    history = _history_block(context)
+    user_msg = f"Knowledge base excerpts:\n{grounding}\n\nQuestion: {query}"
+    if history:
+        user_msg = (
+            "Recent conversation (use it to resolve follow-ups and "
+            f"pronouns):\n{history}\n\n{user_msg}"
+        )
     answer = await _ask_llm(
         "You are FINNIE, a friendly finance educator. Answer concisely in "
         "markdown. Ground your answer in the provided knowledge base excerpts. "
         "Never give personalized investment advice; speak in general "
         "educational terms.",
-        f"Knowledge base excerpts:\n{grounding}\n\nQuestion: {query}",
+        user_msg,
     )
     if answer:
         return answer + _citations(query)
@@ -270,10 +355,11 @@ def _parse_goal(query: str) -> tuple[float, int] | None:
 
 async def goals_agent(query: str, context: dict) -> str:
     # Safety net: a one-time investment growth question must get its
-    # lump-sum FV answer even if the router ever sends it here.
-    lump = _lump_sum_answer(query)
-    if lump:
-        return lump
+    # lump-sum FV answer (or an honest clarifying prompt) even if the
+    # router ever sends it here — never a monthly-savings plan.
+    growth = _growth_answer(query)
+    if growth:
+        return growth
     parsed = _parse_goal(query)
     if not parsed:
         return (

@@ -42,6 +42,29 @@ def _run(coro):
     return asyncio.run(coro)
 
 
+def _as_position_dicts(rows) -> list[dict]:
+    """Normalize Portfolio-tab editor output (DataFrame or list of dicts)
+    into [{symbol, shares, avg_cost}] for the chat graph context."""
+    if rows is None:
+        return []
+    if hasattr(rows, "to_dict"):  # pandas DataFrame from st.data_editor
+        rows = rows.to_dict("records")
+    out = []
+    for p in rows or []:
+        try:
+            sym = str(p.get("symbol", "")).strip().upper()
+            if not sym or sym == "NAN":
+                continue
+            out.append({
+                "symbol": sym,
+                "shares": float(p.get("shares") or 0),
+                "avg_cost": float(p.get("avg_cost") or 0),
+            })
+        except (AttributeError, TypeError, ValueError):
+            continue
+    return out
+
+
 tab_chat, tab_portfolio, tab_markets, tab_goals, tab_knowledge = st.tabs(
     ["💬 Chat", "📊 Portfolio", "📈 Markets", "🎯 Goals", "📚 Knowledge"]
 )
@@ -62,7 +85,13 @@ with tab_chat:
             st.markdown(prompt)
         with st.chat_message("assistant"):
             with st.spinner("Routing to specialist…"):
-                result = _run(run_finnie(prompt))
+                result = _run(
+                    run_finnie(
+                        prompt,
+                        history=st.session_state.history,
+                        portfolio=st.session_state.get("finnie_positions"),
+                    )
+                )
             st.caption(f"routed to `{result['route']}`")
             st.markdown(result["answer"])
         st.session_state.history.append(("assistant", result["answer"], result["route"]))
@@ -76,12 +105,16 @@ with tab_portfolio:
         num_rows="dynamic",
         key="positions",
     )
+    # Keep the edited holdings in session state so the Chat tab can pass
+    # them into the graph; also fixes data_editor returning a DataFrame.
+    st.session_state["finnie_positions"] = _as_position_dicts(edited)
     if st.button("Analyze portfolio"):
         with st.spinner("Fetching quotes…"):
-            quotes = {s: (_run(get_quote(s)))["price"] for s in {p["symbol"] for p in edited}}
+            normed = st.session_state["finnie_positions"] or _as_position_dicts(DEFAULT_PORTFOLIO)
+            quotes = {s: (_run(get_quote(s)))["price"] for s in {p["symbol"] for p in normed}}
         from finnie.tools import portfolio_summary
 
-        summary = portfolio_summary(edited, quotes)
+        summary = portfolio_summary(normed, quotes)
         c1, c2, c3 = st.columns(3)
         c1.metric("Total value", f"${summary['total_value']:,.2f}")
         c2.metric("Total P&L", f"${summary['total_pnl']:+,.2f}", f"{summary['total_pnl_pct']:+.2f}%")
